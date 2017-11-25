@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -34,6 +35,8 @@ public class Main extends Application {
         stage.requestFocus();
 
         stage.setResizable(false);
+
+        Text text = new Text("i bims 1 text");
 
     }
 }
