@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -17,6 +18,15 @@ public class Main extends Application {
         stage.setScene(scene);
 
         stage.show();
+
+        stage.setWidth(500);
+        stage.setHeight(200);
+
+        double screenWidth = Screen.getPrimary().getBounds().getWidth();
+        double screenHeight = Screen.getPrimary().getBounds().getHeight();
+
+
+
 
     }
 }
