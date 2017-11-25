@@ -3,6 +3,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
@@ -19,14 +20,15 @@ public class Main extends Application {
 
         stage.show();
 
-        stage.setWidth(500);
-        stage.setHeight(200);
+        stage.setWidth(400);
+        stage.setHeight(500);
 
         double screenWidth = Screen.getPrimary().getBounds().getWidth();
         double screenHeight = Screen.getPrimary().getBounds().getHeight();
 
+        stage.setX(screenWidth - stage.getWidth());
+        stage.setY(screenHeight - stage.getHeight());
 
-
-
+        stage.initStyle(StageStyle.DECORATED);
     }
 }
