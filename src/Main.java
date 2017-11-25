@@ -18,6 +18,8 @@ public class Main extends Application {
 
         stage.setScene(scene);
 
+        stage.initStyle(StageStyle.TRANSPARENT);
+
         stage.show();
 
         stage.setWidth(400);
@@ -29,6 +31,9 @@ public class Main extends Application {
         stage.setX(screenWidth - stage.getWidth());
         stage.setY(screenHeight - stage.getHeight());
 
-        stage.initStyle(StageStyle.DECORATED);
+        stage.requestFocus();
+
+        stage.setResizable(false);
+
     }
 }
