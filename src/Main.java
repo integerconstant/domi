@@ -2,6 +2,7 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -11,9 +12,12 @@ import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         launch();
     }
+
+    private static boolean keyADown = false;
+    private static boolean keyBDown = false;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -47,16 +51,28 @@ public class Main extends Application {
         text.setY(20);
         text.setFont(Font.font("Flubber", 22));
 
-
-
-        scene.setOnKeyPressed(event -> {
-
-        });
-
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
+                if (event.getCode() == KeyCode.A) {
+                    keyADown = true;
+                } else if (event.getCode() == KeyCode.B) {
+                    keyBDown = true;
+                }
+                if (keyADown && keyBDown) {
+                    System.out.println("Key Combination pressed");
+                }
+            }
+        });
 
+        scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if (event.getCode() == KeyCode.A) {
+                    keyADown = false;
+                } else if (event.getCode() == KeyCode.B) {
+                    keyBDown = false;
+                }
             }
         });
 
