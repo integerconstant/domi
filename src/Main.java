@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -36,7 +37,15 @@ public class Main extends Application {
 
         stage.setResizable(false);
 
-        Text text = new Text("i bims 1 text");
+        Text text = new Text("Fertig Programmieren");
+
+        group.getChildren().add(text);
+
+        text.setX(10);
+        text.setY(20);
+        text.setFont(Font.font("Flubber", 22));
+
+
 
     }
 }
