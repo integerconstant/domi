@@ -28,8 +28,6 @@ public class Main extends Application {
 
         stage.initStyle(StageStyle.TRANSPARENT);
 
-        stage.show();
-
         stage.setWidth(400);
         stage.setHeight(500);
 
@@ -54,27 +52,14 @@ public class Main extends Application {
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                if (event.getCode() == KeyCode.A) {
-                    keyADown = true;
-                } else if (event.getCode() == KeyCode.B) {
-                    keyBDown = true;
-                }
-                if (keyADown && keyBDown) {
-                    System.out.println("Key Combination pressed");
-                }
-            }
-        });
-
-        scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                if (event.getCode() == KeyCode.A) {
-                    keyADown = false;
-                } else if (event.getCode() == KeyCode.B) {
-                    keyBDown = false;
+                if (event.isControlDown() && event.getCode() == KeyCode.COMMA) {
+                    if (stage.isShowing()) {
+                        stage.hide();
+                    } else {
+                        stage.show();
+                    }
                 }
             }
         });
-
     }
 }
