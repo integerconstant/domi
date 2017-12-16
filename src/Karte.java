@@ -31,6 +31,8 @@ public enum Karte {
     SCHELLE_NEUNER(Farbe.SCHELLE,Schlag.NEUNER),
     SCHELLE_ACHTER(Farbe.SCHELLE,Schlag.ACHTER),
     SCHELLE_SIEBENER(Farbe.SCHELLE,Schlag.SIEBENER);
+
+
     private Schlag schlag;
     private Farbe farbe;
     private Karte (Farbe farbe, Schlag schlag){
